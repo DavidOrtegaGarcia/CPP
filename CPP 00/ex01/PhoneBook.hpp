@@ -6,7 +6,7 @@
 /*   By: daortega <daortega@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:51:11 by daortega          #+#    #+#             */
-/*   Updated: 2024/10/10 15:43:39 by daortega         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:56:16 by daortega         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PhoneBook
 {
 	private:
 		Contact _contacts[8];
-		int i;
+		int n_contacts;
 	public:
 		PhoneBook();
 		~PhoneBook();

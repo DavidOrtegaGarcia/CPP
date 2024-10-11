@@ -6,7 +6,7 @@
 /*   By: daortega <daortega@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:56:53 by daortega          #+#    #+#             */
-/*   Updated: 2024/10/10 14:57:28 by daortega         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:30:02 by daortega         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	void setPhone(std::string phone);
 	void setDarkestSecret(std::string darkest_secret);
 	void addContact();
-	void printContact();
+	void printContact(int index);
 };
 
 #endif

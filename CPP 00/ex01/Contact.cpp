@@ -6,7 +6,7 @@
 /*   By: daortega <daortega@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:15:03 by daortega          #+#    #+#             */
-/*   Updated: 2024/10/10 16:15:58 by daortega         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:06:39 by daortega         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ void Contact::addContact()
 		}
 		if (i != 9)
 			std::cout << "Phone Number has to have 9 digits" << std::endl;
-	} while(!check_input(str));
+	} while(!check_input(str) && !exit);
 	setPhone(str);
 	do
 	{
@@ -133,12 +133,29 @@ void Contact::addContact()
 	setDarkestSecret(str);
 }
 
-
-void Contact::printContact()
+void printf_info(std::string str)
 {
-	std::cout << "|" << _fname << "|";
-	std::cout << "|" << _lname << "|";
-	std::cout << "|" << _nick << "|";
-	std::cout << "|" << _phone << "|";
-	std::cout << "|" << _darkest_secret << "|";
+	int size;
+
+	size = str.size();
+	for (int i = 0; i < 10; i++){
+		if (i < size) 
+			std::cout << str[i];
+		else
+			std::cout << " ";
+	}
+	if (size > 10)
+		std::cout << ".";
+}
+
+void Contact::printContact(int index)
+{
+
+	std::cout << "     " << index << "    |";
+	printf_info(_fname);
+	std::cout << "|";
+	printf_info(_lname);
+	std::cout << "|";
+	printf_info(_nick);
+	std::cout << std::endl;
 }

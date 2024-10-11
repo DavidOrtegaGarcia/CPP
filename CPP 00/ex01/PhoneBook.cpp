@@ -6,7 +6,7 @@
 /*   By: daortega <daortega@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:41:58 by daortega          #+#    #+#             */
-/*   Updated: 2024/10/10 16:10:18 by daortega         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:01:25 by daortega         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PhoneBook::PhoneBook()
 {
-	i = 0;
+	n_contacts = 0;
 	std::cout << "Default constructor PhoneBook called" << std::endl;
 }
 
@@ -24,14 +24,15 @@ PhoneBook::~PhoneBook()
 }
 void PhoneBook::add()
 {
-	_contacts[i%8].addContact();
-	i++;
+	_contacts[n_contacts%8].addContact();
+	n_contacts++;
 }
 void PhoneBook::search()
 {
-	for (int i = 0; i < 8; i++)
+	std::cout << "  index   " << "|" << "first name" << "|" << "last name " << "|" << "nickname  " << std::endl;
+	for (int i = 0; i < n_contacts && i < 8; i++)
 	{
-		_contacts[i].printContact();
+		_contacts[i].printContact(i + 1);
 	}
 	
 }
