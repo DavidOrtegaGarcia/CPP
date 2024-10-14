@@ -6,7 +6,7 @@
 /*   By: daortega <daortega@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:56:53 by daortega          #+#    #+#             */
-/*   Updated: 2024/10/11 14:30:02 by daortega         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:34:43 by daortega         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CONTACT_HPP
 
 # include <iostream>
-# include <string>
+# include <cstring>
 # include <cstdlib> 
 
 class Contact
@@ -36,6 +36,7 @@ public:
 	void setDarkestSecret(std::string darkest_secret);
 	void addContact();
 	void printContact(int index);
+	void printFullContact();
 };
 
 #endif

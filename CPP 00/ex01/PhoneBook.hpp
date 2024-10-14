@@ -6,7 +6,7 @@
 /*   By: daortega <daortega@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:51:11 by daortega          #+#    #+#             */
-/*   Updated: 2024/10/11 14:56:16 by daortega         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:26:06 by daortega         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PHONEBOOK_HPP
 
 #include <iostream>
-#include <string>
+#include <cstring>
 #include "Contact.hpp"
 
 class PhoneBook 
