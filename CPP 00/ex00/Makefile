@@ -21,7 +21,7 @@ CC 		= 	c++
 CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98
 
 #--------------<SRC>----------------
-NAME	=	cpp00
+NAME	=	megaphone
 CFILES	=	megaphone.cpp
 
 DIR_O	= 	tmp/
@@ -35,7 +35,7 @@ $(DIR_O):
 
 $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
-	@echo "${GREEN}CPP00 Compiled${NC}"
+	@echo "${GREEN}megaphone Compiled${NC}"
 	
 $(DIR_O)%.o: %.cpp Makefile
 	@mkdir -p $(dir $@)
@@ -48,7 +48,7 @@ clean:
 
 fclean: clean 
 	@rm -f $(NAME)
-	@printf "${RED}CPP00 deleted\n${NC}"
+	@printf "${RED}megaphone deleted\n${NC}"
 
 re: fclean all
 

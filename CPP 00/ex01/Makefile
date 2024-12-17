@@ -22,7 +22,7 @@ CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98
 DEPFLAGS = -MMD -MP
 
 #--------------<SRC>----------------
-NAME	=	cpp01
+NAME	=	Contact
 CFILES	=	Contact.cpp PhoneBook.cpp main.cpp
 
 DIR_O	= 	tmp/
@@ -36,7 +36,7 @@ $(DIR_O):
 
 $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
-	@echo "${GREEN}CPP01 Compiled${NC}"
+	@echo "${GREEN}Contact Compiled${NC}"
 	
 $(DIR_O)%.o: %.cpp Makefile
 	@mkdir -p $(dir $@)
@@ -49,7 +49,7 @@ clean:
 
 fclean: clean 
 	@rm -f $(NAME)
-	@printf "${RED}CPP01 deleted\n${NC}"
+	@printf "${RED}Contact deleted\n${NC}"
 
 re: fclean all
 

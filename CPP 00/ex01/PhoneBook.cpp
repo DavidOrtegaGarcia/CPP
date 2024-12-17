@@ -15,12 +15,12 @@
 PhoneBook::PhoneBook()
 {
 	n_contacts = 0;
-	std::cout << "Default constructor PhoneBook called" << std::endl;
+	//std::cout << "Default constructor PhoneBook called" << std::endl;
 }
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << "Default destructor PhoneBook called" << std::endl;
+	//std::cout << "Default destructor PhoneBook called" << std::endl;
 }
 void PhoneBook::add()
 {
