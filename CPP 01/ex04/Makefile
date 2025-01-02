@@ -10,8 +10,8 @@ CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98
 DEPFLAGS = -MMD -MP
 
 #--------------<SRC>----------------
-NAME	=	sed
-CFILES	=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+NAME	=	sed_is_for_losers
+CFILES	=	main.cpp
 
 DIR_O	= 	tmp/
 OBJC	=	$(addprefix $(DIR_O), $(CFILES:.cpp=.o))
