@@ -62,9 +62,12 @@ int	Account::checkAmount() const
 
 void	Account::_displayTimestamp()
 {
-	std::time_t currentTime = std::time(nullptr);
-	std::tm* localTime = std::localtime(&currentTime);
-	std::cout << std::put_time(localTime, "[%Y%m%d_%H%M%S] ");
+	std::time_t currentTime = std::time(NULL);
+    std::tm* localTime = std::localtime(&currentTime);
+
+    char buffer[19]; 
+    std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", localTime);
+    std::cout << buffer;
 }
 void	Account::displayAccountsInfos()
 {
