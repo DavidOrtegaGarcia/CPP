@@ -37,19 +37,32 @@ void Harl::complain(std::string level)
 {
 	int i;
 	std::string commands[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*array[4])();
-
-	array[0] = &Harl::debug;
-	array[1] = &Harl::info;
-	array[2] = &Harl::warning;
-	array[3] = &Harl::error;
 	
 	i = 0;
 	while(commands[i] != level && i < 4)
 		i++;
-	while(commands[i] == level)
+	switch (i)
 	{
-		(this->*array[i])();
-		i++;
+		case 0:
+			this->debug();
+			std::cout << std::endl;
+			/* fall through */
+		case 1:
+			this->info();
+			std::cout << std::endl;
+			/* fall through */
+		case 2:
+			this->warning();
+			std::cout << std::endl;
+			/* fall through */
+		case 3:
+			this->error();
+			std::cout << std::endl;
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" <<
+			std::endl;
+
+		
 	}
 }

@@ -10,7 +10,7 @@ CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98
 DEPFLAGS = -MMD -MP
 
 #--------------<SRC>----------------
-NAME	=	Harl_2.0
+NAME	=	harlFilter
 CFILES	=	main.cpp Harl.cpp
 
 DIR_O	= 	tmp/
