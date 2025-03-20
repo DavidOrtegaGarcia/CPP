@@ -1,6 +1,9 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : _name(name), _weapon(NULL){}
+// Constructor con lista de inizializacion 
+// Es quivalente a poner dentro del contructor
+//(_name = name y _weapon = NULL)
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL){} 
 HumanB::~HumanB(){}
 void HumanB::setWeapon(Weapon &weapon)
 {
