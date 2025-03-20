@@ -10,7 +10,7 @@ CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
 DEPFLAGS = -MMD -MP
 
 #--------------<SRC>----------------
-NAME	=	Zombie
+NAME	=	a.out
 CFILES	=	main.cpp Fixed.cpp 
 
 DIR_O	= 	tmp/
@@ -24,7 +24,7 @@ $(DIR_O):
 
 $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
-	@echo "${GREEN}Zombie Compiled${NC}"
+	@echo "${GREEN}a.out Compiled${NC}"
 	
 $(DIR_O)%.o: %.cpp Makefile
 	@mkdir -p $(dir $@)
@@ -37,7 +37,7 @@ clean:
 
 fclean: clean 
 	@rm -f $(NAME)
-	@printf "${RED}Zombie deleted\n${NC}"
+	@printf "${RED}a.out deleted\n${NC}"
 
 re: fclean all
 
