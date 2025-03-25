@@ -52,10 +52,10 @@ int Fixed::toInt(void) const
 
 float Fixed::toFloat(void) const
 {
-	return (_raw / (1 << _fractionalbits));
+	return ((float)_raw / (1 << _fractionalbits));
 }
 
 std::ostream &operator<<(std::ostream &out, Fixed const &fixed)
 {
-	return (out << fixed.toFloat()); // Pasa el nmero en float al stnd output
+	return (out << fixed.toFloat()); // Pasa el numero en float al stnd output
 }
