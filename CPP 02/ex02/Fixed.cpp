@@ -1,6 +1,5 @@
 #include "Fixed.hpp"
 
-
 //----CONSTRUCTORS----
 Fixed::Fixed() : _raw(0)
 {
@@ -28,7 +27,7 @@ Fixed::~Fixed()
 }
 
 //----OPERATORS----
-
+//---Comparison operators---
 // Accedemos con -> porque this es un puntero y con . porque other es una referencia
 Fixed &Fixed::operator = (const Fixed &other)
 {
@@ -37,7 +36,7 @@ Fixed &Fixed::operator = (const Fixed &other)
 		this->_raw = other.getRawBits();
 	return (*this);
 }
-//---Comparison operators---
+
 bool Fixed::operator > (const Fixed &other) const
 {
 	return(_raw > other.getRawBits());
