@@ -12,7 +12,7 @@ DEPFLAGS = -MMD -MP
 #--------------<SRC>----------------
 NAME	=	Zombie
 CFILES	=	main.cpp Zombie.cpp zombieHorde.cpp
-HFILES  =   Zombie.hpp zombieHorde.hpp
+HFILES  =   Zombie.hpp
 
 DIR_O	= 	tmp/
 OBJC	=	$(addprefix $(DIR_O), $(CFILES:.cpp=.o))
