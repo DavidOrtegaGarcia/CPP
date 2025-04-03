@@ -11,7 +11,8 @@ DEPFLAGS = -MMD -MP
 
 #--------------<SRC>----------------
 NAME	=	ClapTrap.exe
-CFILES	=	main.cpp ClapTrap.cpp 
+CFILES	=	main.cpp ClapTrap.cpp
+HFILES  =   ClapTrap.hpp 
 
 DIR_O	= 	tmp/
 OBJC	=	$(addprefix $(DIR_O), $(CFILES:.cpp=.o))
@@ -24,9 +25,9 @@ $(DIR_O):
 
 $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
-	@echo "${GREEN}a.out Compiled${NC}"
+	@echo "${GREEN}ClapTrap.exe Compiled${NC}"
 	
-$(DIR_O)%.o: %.cpp Makefile
+$(DIR_O)%.o: %.cpp Makefile $(HFILES)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
 	@echo "${YELLOW}Compiling obj $@...${NC}"
@@ -37,7 +38,7 @@ clean:
 
 fclean: clean 
 	@rm -f $(NAME)
-	@printf "${RED}a.out deleted\n${NC}"
+	@printf "${RED}ClapTrap.exe deleted\n${NC}"
 
 re: fclean all
 

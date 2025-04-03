@@ -8,8 +8,16 @@ int main(void)
 
 	ct3 = ct1;
 
-	ct1.attack(ct2.getName());
-	ct2.takeDamage(ct1.getAttackDMG());
-	ct2.beRepaired(ct1.getAttackDMG());
+	for(int i = 0; i < 12; i++)
+	{
+		ct1.attack("Test");
+	}
+	ct1.beRepaired(1);
+	for(int i = 0; i < 6; i++)
+	{
+		ct1.takeDamage(2);
+	}
+	ct2.takeDamage(1);
+	ct2.beRepaired(1);
 
 }

@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 
 //----Constructors----
+
 ClapTrap::ClapTrap() : _name("Default Clap"), _hp(10), _ep(10), _attackDMG(0)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
@@ -19,7 +20,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap destructor called" << std::endl;
+	std::cout << "ClapTrap estructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator = (const ClapTrap &other)
@@ -40,9 +41,9 @@ ClapTrap &ClapTrap::operator = (const ClapTrap &other)
 void ClapTrap::attack(const std::string &target)
 {
 	if (_hp <= 0)
-		std::cout << "ClapTrap " << _name << " is dead" << std::endl;
+		std::cout << _name << " is dead" << std::endl;
 	else if (_ep <= 0)
-		std::cout << "ClapTrap " << _name << " has no energy" << std::endl;
+		std::cout << _name << " has no energy" << std::endl;
 	else
 	{
 		_ep--;
@@ -53,7 +54,7 @@ void ClapTrap::attack(const std::string &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hp <= 0)
-		std::cout << "ClapTrap " << _name << " is dead" << std::endl;
+		std::cout << _name << " is dead" << std::endl;
 	else
 	{
 		if (amount > _hp)
@@ -67,9 +68,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_hp <= 0)
-		std::cout << "ClapTrap " << _name << " is dead" << std::endl;
+		std::cout << _name << " is dead" << std::endl;
 	else if (_ep <= 0)
-		std::cout << "ClapTrap " << _name << " has no energy" << std::endl;
+		std::cout << _name << " has no energy" << std::endl;
 	else
 	{
 		_hp += amount;

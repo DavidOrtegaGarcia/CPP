@@ -6,6 +6,6 @@ int main(void)
 
 	zombie = newZombie("Marc");
 	zombie->announce();
-	randomChump("Un zombie cualquiera");
+	randomChump("Un zombi cualquiera");
 	delete(zombie);
 }

@@ -23,7 +23,8 @@ DEPFLAGS = -MMD -MP
 
 #--------------<SRC>----------------
 NAME	=	Contact
-CFILES	=	Contact.cpp PhoneBook.cpp main.cpp
+CFILES	=	main.cpp Contact.cpp PhoneBook.cpp 
+HFILES  =   Contact.hpp PhoneBook.hpp
 
 DIR_O	= 	tmp/
 OBJC	=	$(addprefix $(DIR_O), $(CFILES:.cpp=.o))
@@ -38,7 +39,7 @@ $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
 	@echo "${GREEN}Contact Compiled${NC}"
 	
-$(DIR_O)%.o: %.cpp Makefile
+$(DIR_O)%.o: %.cpp Makefile $(HFILES)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
 	@echo "${YELLOW}Compiling obj $@...${NC}"

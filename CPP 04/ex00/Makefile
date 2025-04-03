@@ -6,13 +6,13 @@ YELLOW	=	\033[38;5;190m
 
 #-------------<COMMANDS>------------
 CC 		= 	c++
-CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98
+CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
 DEPFLAGS = -MMD -MP
 
 #--------------<SRC>----------------
-NAME	=	harlFilter
-CFILES	=	main.cpp Harl.cpp
-HFILES  =   Harl.hpp 
+NAME	=	Animal.exe
+CFILES	=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+HFILES  =   Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 
 DIR_O	= 	tmp/
 OBJC	=	$(addprefix $(DIR_O), $(CFILES:.cpp=.o))
@@ -25,7 +25,7 @@ $(DIR_O):
 
 $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
-	@echo "${GREEN}Weapon Compiled${NC}"
+	@echo "${GREEN}Animal.exe Compiled${NC}"
 	
 $(DIR_O)%.o: %.cpp Makefile $(HFILES)
 	@mkdir -p $(dir $@)
@@ -38,7 +38,7 @@ clean:
 
 fclean: clean 
 	@rm -f $(NAME)
-	@printf "${RED}Weapon deleted\n${NC}"
+	@printf "${RED}Animal.exe deleted\n${NC}"
 
 re: fclean all
 

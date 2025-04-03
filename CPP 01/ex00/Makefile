@@ -12,6 +12,7 @@ DEPFLAGS = -MMD -MP
 #--------------<SRC>----------------
 NAME	=	Zombie
 CFILES	=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+HFILES  =   Zombie.hpp newZombie.hpp randomChump.hpp
 
 DIR_O	= 	tmp/
 OBJC	=	$(addprefix $(DIR_O), $(CFILES:.cpp=.o))
@@ -26,7 +27,7 @@ $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
 	@echo "${GREEN}Zombie Compiled${NC}"
 	
-$(DIR_O)%.o: %.cpp Makefile
+$(DIR_O)%.o: %.cpp Makefile $(HFILES)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
 	@echo "${YELLOW}Compiling obj $@...${NC}"

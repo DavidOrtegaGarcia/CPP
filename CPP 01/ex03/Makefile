@@ -12,6 +12,7 @@ DEPFLAGS = -MMD -MP
 #--------------<SRC>----------------
 NAME	=	Weapon
 CFILES	=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+HFILES  =   Weapon.hpp HumanA.hpp HumanB.hpp
 
 DIR_O	= 	tmp/
 OBJC	=	$(addprefix $(DIR_O), $(CFILES:.cpp=.o))
@@ -26,7 +27,7 @@ $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
 	@echo "${GREEN}Weapon Compiled${NC}"
 	
-$(DIR_O)%.o: %.cpp Makefile
+$(DIR_O)%.o: %.cpp Makefile $(HFILES)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
 	@echo "${YELLOW}Compiling obj $@...${NC}"
