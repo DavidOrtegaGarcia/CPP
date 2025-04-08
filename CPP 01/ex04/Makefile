@@ -37,7 +37,7 @@ clean:
 
 fclean: clean 
 	@rm -f $(NAME)
-	@printf "${RED}Weapon deleted\n${NC}"
+	@printf "${RED}sed_is_for_losers deleted\n${NC}"
 
 re: fclean all
 
