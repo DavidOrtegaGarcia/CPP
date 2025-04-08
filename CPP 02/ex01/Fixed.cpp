@@ -12,11 +12,13 @@ Fixed::Fixed(const Fixed &fixed)
 }
 Fixed::Fixed(const int raw_int)
 {
+	std::cout << "Int constructor called" << std::endl;
 	_raw = raw_int << _fractionalbits;
 };
 
 Fixed::Fixed(const float raw_float)
 {
+	std::cout << "Float constructor called" << std::endl;
 	_raw = roundf(raw_float *(1 << _fractionalbits));
 }
 
@@ -31,7 +33,7 @@ Fixed &Fixed::operator = (const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-		this->_raw = other.getRawBits();
+		this->_raw = other._raw;
 	return (*this);
 }
 
