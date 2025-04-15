@@ -2,16 +2,6 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-void	animalSoundValueCopy(Animal animal) {
-
-	animal.makeSound();
-}
-
-void	animalSoundReferenceCopy(Animal * animal) {
-
-	animal->makeSound();
-}
-
 int main()
 {
 	const Animal* meta = new Animal();
