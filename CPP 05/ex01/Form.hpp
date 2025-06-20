@@ -13,7 +13,7 @@ class Form
 		const int _egrade;
 	public:
 		Form();
-		Form(std::string _name, int _sgrade, int _egrade);
+		Form(std::string name, int sgrade, int egrade);
 		Form(const Form &other);
 		~Form();
 		Form &operator = (const Form &other);

@@ -7,7 +7,7 @@ int	main(void) {
 	//const AAnimal *pAnimal = AAnimal();
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
-	const AAnimal *meta[100]; //Const para que no podamos modificar los atributos de los objetos
+	const AAnimal *meta[100]; // Const para que no podamos modificar los atributos de los objetos
 
 	for(int i = 0; i < 100; i++)
 	{
