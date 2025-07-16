@@ -26,7 +26,7 @@ class AForm
 		void beSigned(const Bureaucrat &bur);
 	 	void execute(Bureaucrat const & executor) const;
 		virtual void executeForm() const = 0; // Virtual makes that sons CAN implement the function, 
-											  // =0 makes the class becomes abstact and that the sons HAVE to implement the function
+											  // = 0 makes the class becomes abstact and that the sons HAVE to implement the function
 
 		class GradeTooHighException : public std::exception
 		{
