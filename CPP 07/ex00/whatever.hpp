@@ -1,27 +1,23 @@
 #pragma once 
 
 template<typename T>
-void  swap(T &val1, T &val2)
+void  swap(T &var1, T &var2)
 {
 	T aux;
 
-	aux = val1;
-	val1 = val2;
-	val2 = aux;
+	aux = var1;
+	var1 = var2;
+	var2 = aux;
 }
 
 template<typename T>
-T min(T val1, T val2)
+T min(const T &var1, const T &var2)
 {
-	if (val1 < val2)
-		return(val1);
-	return(val2);
+	return((var1 < var2) ? var1 : var2); // = if (var1 < var2) return(var1) else return(var2)
 }
 
 template<typename T>
-T max(T val1, T val2)
+T max(const T &var1, const T &var2)
 {
-	if (val1 > val2)
-		return(val1);
-	return(val2);
+	return((var1 > var2) ? var1 : var2);
 }
