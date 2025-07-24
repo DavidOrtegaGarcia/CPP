@@ -20,7 +20,7 @@ ScalarConverter::~ScalarConverter()
 	std::cout << "ScalarConverter destructor called" << std::endl;
 }
 
-ScalarConverter &ScalarConverter::operator =(const ScalarConverter &other)
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
 {
 	std::cout << "ScalarConverter copy assignment operator called" << std::endl;
 	(void)other;

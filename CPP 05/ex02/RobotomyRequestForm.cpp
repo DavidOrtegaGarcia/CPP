@@ -45,7 +45,7 @@ void RobotomyRequestForm::executeForm() const
 		sleep(1);
 	}
 	srand(time(0)); // Used to set the starting point for generating random numbers. 
-					//If not used, the sequence of numbers would be the same in every execution
+					// If not used, the sequence of numbers would be the same in every execution
 	if (rand() % 2 == 0)
 		std::cout << _target << " has been robotomized successfully" << std::endl;
 	else
