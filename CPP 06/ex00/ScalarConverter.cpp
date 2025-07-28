@@ -71,7 +71,7 @@ bool checkIntUnderflow(std::string &s)
 	s.erase(1, s.find_first_not_of('0', 1) -1); // Delete all leading zeros after the -, including their position in the string.
 												// We start eraisng from pos 1 of the string and we also search from pos 1 to avoid the -.
 												// find_first_not_of returns the index of the first number that is not a 0 starting from position 1 (doesn't check the - in pos 0).
-												// This means that -0001234 wil return 4 and we need to decrement by 1 to match the number of leading zeros
+												// This means that -0001234 will return 4 and we need to decrement by 1 to match the number of leading zeros
 												//            pos: 01234567 		
 	if (s.length() > min_int.length())
 		return(true);
