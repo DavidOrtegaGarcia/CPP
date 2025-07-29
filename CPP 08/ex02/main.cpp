@@ -30,9 +30,16 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+	
+	//Check = operator
+	std::stack<int> s2;
+	s2.push(82);
+	s2 = mstack;
+	std::cout << "First element mstack: " << mstack.top() << std::endl; //Prints de first value
+	std::cout << "First elemeny s2: " << s2.top() << std::endl; 
 
 	/*list main*/
-	std::cout << std::endl << "Same tests with std::list" << std::endl;
+	/*std::cout << std::endl << "Same tests with std::list" << std::endl;
 	std::list<int> ml;
 
 	ml.push_back(17);
@@ -55,6 +62,6 @@ int main()
 	{
 		std::cout << *lit << std::endl;
 		++lit;
-	}
+	}*/
 	return 0;
 }
