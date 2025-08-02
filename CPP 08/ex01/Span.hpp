@@ -10,6 +10,7 @@ class Span
 		std::vector<int> _nums;
 		unsigned int _max_size;
 	public:
+		Span();
 		Span(unsigned int size);
 		Span(const Span &other);
 		~Span();

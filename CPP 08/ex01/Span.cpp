@@ -1,6 +1,7 @@
 #include "Span.hpp"
 
 //ORTHODOX CANONICAL FORM
+Span::Span() : _max_size(0){}
 Span::Span(unsigned int N) : _max_size(N){}
 
 Span::Span(const Span &other) : _nums(other._nums), _max_size(other._max_size){}
