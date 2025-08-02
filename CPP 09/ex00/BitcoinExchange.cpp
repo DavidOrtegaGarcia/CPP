@@ -51,7 +51,8 @@ void BitcoinExchange::loadExchangeDB()
 		if (!line.empty())
 			_exchange_db.insert(get_data(line));
 	}
-
+	if (_exchange_db.empty())
+		throw std::runtime_error("Error: data.csv is empty");
 }
 
 std::pair<std::string, float> get_data(std::string line)
@@ -156,16 +157,16 @@ void BitcoinExchange::doExchange(char *input)
 	while(std::getline(file, line))
 	{
 		if (!line.empty())
-			makeExchange(line);
+			makeExchange(line, _exchange_db);
 	}
 }
 
-void makeExchange(std::string line)
+void makeExchange(std::string line, const std::map<std::string, float> &exchangeDB)
 {
 	std::string date;
 	std::string svalue;
 	float value;
-	//float result;
+	float result;
 
 	size_t i = 0;
 	while (i != line.length() && line[i] != '|')
@@ -204,9 +205,9 @@ void makeExchange(std::string line)
 		std::cout << "Error: not a positive number." << std::endl; 
 		return ;
 	}
-	std::cout << date << " " << value << std::endl;
-	//result = getResult(date, value);
-	//std::cout << date << " => " << value << " = " << result << std::endl;
+
+	result = getResult(date, value, exchangeDB);
+	std::cout << date << " => " << value << " = " << result << std::endl;
 }
 
 bool isDateCorrect(std::string date)
@@ -227,7 +228,7 @@ bool isDateCorrect(std::string date)
 	year = atoi(date.substr(0, 4).c_str());
 	month = atoi(date.substr(5, 2).c_str());
 	day = atoi(date.substr(8, 2).c_str());
-
+	
 	if (year < 2000 || year > 2040)
 		return(false);
 	if (month < 1 || month > 12)
@@ -244,7 +245,7 @@ bool isValueCorrect(std::string svalue)
 
 	if (svalue.length() < 2 || svalue[0] != ' ')
 		return(false);
-	if (svalue.length() > 3 && svalue[1] == '-' && isdigit(svalue[2]))
+	if (svalue.length() > 2 && svalue[1] == '-' && isdigit(svalue[2]))
 		i++;
 	for (; i < svalue.length(); i++)
 	{
@@ -261,3 +262,16 @@ bool isValueCorrect(std::string svalue)
 	return(true);
 }
 
+float getResult(std::string date, float value, const std::map<std::string, float> &exchangeDB)
+{
+	std::map<std::string, float>::const_iterator it; 
+	
+	it = exchangeDB.begin();
+	while(it != exchangeDB.end() && date >= it->first)
+		++it;
+	if(it == exchangeDB.begin())
+		return (value * it->second);
+	if(it == exchangeDB.end() || date != it->first)
+		--it;
+	return(value * it->second);
+}

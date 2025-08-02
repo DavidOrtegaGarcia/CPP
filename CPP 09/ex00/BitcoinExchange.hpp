@@ -6,7 +6,6 @@
 #include <cstdlib>
 #include <cctype>
 
-
 class BitcoinExchange
 {
 	private:
@@ -27,8 +26,9 @@ class BitcoinExchange
 std::pair<std::string, float> get_data(std::string line);
 bool isDateCorrectDB(std::string date);
 bool isValueCorrectDB(std::string svalue);
-int daysInMonth(int month, int year);\
+int daysInMonth(int month, int year);
 
-void makeExchange(std::string line);
+void makeExchange(std::string line, const std::map<std::string, float> &exchangeDB);
 bool isDateCorrect(std::string date);
 bool isValueCorrect(std::string svalue);
+float getResult(std::string date, float value, const std::map<std::string, float> &exchangeDB);
