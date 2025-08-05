@@ -86,7 +86,7 @@ bool isDateCorrectDB(std::string date)
 		return(false);
 	for(size_t i = 0; i < date.length(); i++)
 	{
-		if (i != 4 && i != 7 &&!std::isdigit(date[i]))
+		if (i != 4 && i != 7 && !isdigit(date[i]))
 			return(false);
 	}
 	int year = atoi(date.substr(0, 4).c_str());

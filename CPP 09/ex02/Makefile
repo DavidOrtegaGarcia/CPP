@@ -10,8 +10,8 @@ CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
 DEPFLAGS = -MMD -MP # To implement the .hpp and .tpp
 
 #--------------<SRC>----------------
-NAME	=	RPN
-CFILES	=	main.cpp RPN.cpp
+NAME	=	PmergeMe
+CFILES	=	main.cpp PmergeMe.cpp
 
 DIR_O	= 	tmp/
 OBJC	=	$(addprefix $(DIR_O), $(CFILES:.cpp=.o))
@@ -25,7 +25,7 @@ $(DIR_O):
 
 $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
-	@echo "${GREEN}RPN compiled${NC}"
+	@echo "${GREEN}PmergeMe compiled${NC}"
 	
 $(DIR_O)%.o: %.cpp Makefile 
 	@mkdir -p $(dir $@)
@@ -38,7 +38,7 @@ clean:
 
 fclean: clean 
 	@rm -f $(NAME) 
-	@printf "${RED}RPN deleted\n${NC}"
+	@printf "${RED}PmergeMe deleted\n${NC}"
 
 re: fclean all
 
