@@ -48,8 +48,8 @@ void binary_insertion(T &container, int key, int low, int high)
 	container.insert(container.begin() + low, key);
 }
 
-//Insert the pendign numbres into main_chain in blocks defined by Jacobsthal numbers.
-//for every block we insert the numbers from last to first for optimization
+//Insert the pending numbers into main_chain in blocks defined by Jacobsthal numbers.
+//For every block we insert the numbers from last to first for optimization
 template<typename T>
 void insertJacobsthalOrder(T &main_chain, T &pending)
 {
@@ -139,4 +139,5 @@ void merge_insertion_sort(T &container)
 	for (size_t i = 0; i < aux.size(); i++)
 		binary_insertion(main_chain, pending[i], 0, main_chain.size() - 1);
 }
+
 */
