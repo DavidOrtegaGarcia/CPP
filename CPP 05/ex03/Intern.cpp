@@ -5,6 +5,7 @@ Intern::Intern(const Intern &other){ *this = other;}
 Intern::~Intern(){}
 Intern &Intern::operator = (const Intern &other)
 {	
+	(void)other;
 	return(*this);
 }
 
@@ -23,11 +24,22 @@ AForm *Intern::makeForm(std::string name, std::string target)
 	switch(i)
 	{
 		case 0:
-			form = new 
+			form = new ShrubberyCreationForm(target);
+			break;
 		case 1:
+			form = new RobotomyRequestForm(target);
+			break;
 		case 2:
+			form = new PresidentialPardonForm(target);
+			break;
 		default:
+			throw InvalidFormException();
 	}
 	return(form);
 }
 
+//EXCEPTIONS
+const char* Intern::InvalidFormException::what() const throw()
+{
+	return("Invalid form");
+}

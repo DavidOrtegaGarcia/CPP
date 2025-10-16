@@ -1,8 +1,9 @@
 #pragma once
 
 #include <iostream>
-
-class AForm;
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Intern
 {
@@ -13,4 +14,10 @@ class Intern
 		Intern &operator = (const Intern &other);
 
 		AForm *makeForm(std::string name, std::string target);
+
+		class InvalidFormException : public std::exception
+		{
+			public:
+				const char* what() const throw(); //throw() means that no excpetion will be thrown
+		};
 };
