@@ -10,7 +10,7 @@ int main()
 	std::cout << "MutantStack tests" << std::endl;
 	mstack.push(5);
 	mstack.push(17);
-	std::cout << "First element: " << mstack.top() << std::endl; //Prints de first value
+	std::cout << "First element: " << mstack.top() << std::endl; //Prints the first value
 	mstack.pop(); 
 	std::cout << "Size: " << mstack.size() << std::endl;
 	
@@ -35,7 +35,7 @@ int main()
 	std::stack<int> s2;
 	s2.push(82);
 	s2 = mstack;
-	std::cout << "First element mstack: " << mstack.top() << std::endl; //Prints de first value
+	std::cout << "First element mstack: " << mstack.top() << std::endl; //Prints the first value
 	std::cout << "First elemeny s2: " << s2.top() << std::endl; 
 
 	/*list main*/
