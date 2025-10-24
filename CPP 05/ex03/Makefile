@@ -25,7 +25,7 @@ $(DIR_O):
 
 $(NAME): $(OBJC)
 	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
-	@echo "${GREEN}AForm.exe Compiled${NC}"
+	@echo "${GREEN}Intern.exe Compiled${NC}"
 	
 $(DIR_O)%.o: %.cpp Makefile $(HFILES)
 	@mkdir -p $(dir $@)
@@ -38,7 +38,7 @@ clean:
 
 fclean: clean 
 	@rm -f $(NAME) 
-	@printf "${RED}AForm.exe deleted\n${NC}"
+	@printf "${RED}Intern.exe deleted\n${NC}"
 
 re: fclean all
 
